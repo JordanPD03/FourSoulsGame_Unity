@@ -43,6 +43,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          dotnet-sonarscanner begin /k:"JordanPD03_FourSoulsGame_Unity" /o:"jordanpd03" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.skipJreProvisioning=true
+          $scanner = "${{ runner.temp }}\scanner\dotnet-sonarscanner.exe"
+          & $scanner begin /k:"JordanPD03_FourSoulsGame_Unity" /o:"jordanpd03" /d:sonar.token="$env:SONAR_TOKEN" /d:sonar.scanner.skipJreProvisioning=true
           dotnet build Assembly-CSharp.csproj
-          dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          & $scanner end /d:sonar.token="$env:SONAR_TOKEN"
