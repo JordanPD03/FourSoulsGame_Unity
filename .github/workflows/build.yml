@@ -38,7 +38,7 @@ jobs:
 
       - name: Build the project
         run: |
-          dotnet build --no-incremental
+          dotnet build Assembly-CSharp.csproj --no-incremental
 
       - name: End SonarCloud analysis
         run: dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
