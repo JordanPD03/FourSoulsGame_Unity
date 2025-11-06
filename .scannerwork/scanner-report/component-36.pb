@@ -1,0 +1,1 @@
+$ 2csXJhr2Assets/Scripts/Editor/TreasureDeckConfigCreator.cs

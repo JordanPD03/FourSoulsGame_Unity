@@ -1,0 +1,1 @@
+ 2csX,hr2Assets/Scripts/CardEffects/AddMonsterSlotEffect.cs

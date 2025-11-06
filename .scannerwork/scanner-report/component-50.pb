@@ -1,0 +1,1 @@
+2 2csX¼hr%Assets/Scripts/UI/CoinGainAnimator.cs

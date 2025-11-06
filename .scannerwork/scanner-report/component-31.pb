@@ -1,0 +1,1 @@
+ 2csXQhr(Assets/Scripts/Data/DeckConfiguration.cs

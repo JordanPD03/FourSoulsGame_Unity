@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae131153ddf9a4cabd4bba58140b6a, type: 3}
+  m_Name: TheBone
+  m_EditorClassIdentifier: 
+  cardId: 1003
+  cardName: TheBone
+  cardType: 1
+  description: 
+  frontSprite: {fileID: 21300000, guid: 44bfb3094fe589e42bc4facabf70ab35, type: 3}
+  backSprite: {fileID: 21300000, guid: 1783794f60a09c84cb89a0d8cae4baf6, type: 3}
+  health: 0
+  diceRequirement: 0
+  attackDamage: 0
+  rewardCoins: 0
+  rewardLootCards: 0
+  rewardTreasure: 0
+  rewardSoulsMin: 0
+  rewardSoulsMax: 0
+  effects: []
+  hasCombatTrigger: 0
+  combatTriggerRollValue: 0
+  combatTriggerAttackerDamage: 0
+  combatTriggerMonsterHeal: 0
+  isUnique: 1
+  canPlayOnOtherTurn: 1
+  isSingleUse: 0
+  isPassive: 0
+  isEternal: 1
+  autoAssignBackSprite: 1
+  lootConvertsToTreasure: 0
+  lootTreasureResult: {fileID: 0}
+  treasureDestroyable: 0
+  monsterRank: 0
+  bossSouls: 0

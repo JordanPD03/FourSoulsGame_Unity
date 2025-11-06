@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae131153ddf9a4cabd4bba58140b6a, type: 3}
+  m_Name: A Bomb
+  m_EditorClassIdentifier: 
+  cardId: 7
+  cardName: A Bomb
+  cardType: 0
+  description: "Haz 1 de da\xF1o a un monstruo o jugador"
+  frontSprite: {fileID: 21300000, guid: c9853363cc09c6b4ab063868ab191600, type: 3}
+  backSprite: {fileID: 21300000, guid: db6ac5ca53e217747acbbfe3f6b66ea3, type: 3}
+  health: 0
+  diceRequirement: 0
+  attackDamage: 0
+  rewardCoins: 0
+  rewardLootCards: 0
+  rewardTreasure: 0
+  rewardSoulsMin: 0
+  rewardSoulsMax: 0
+  effects:
+  - {fileID: 11400000, guid: 807cc5ccaf363fb48a3b7a2d036750d4, type: 2}
+  hasCombatTrigger: 0
+  combatTriggerRollValue: 0
+  combatTriggerAttackerDamage: 0
+  isUnique: 0
+  canPlayOnOtherTurn: 1
+  isSingleUse: 1
+  isPassive: 0

@@ -1,0 +1,1 @@
+* 2csXÈhr-Assets/Scripts/UI/Board/CardPreviewManager.cs

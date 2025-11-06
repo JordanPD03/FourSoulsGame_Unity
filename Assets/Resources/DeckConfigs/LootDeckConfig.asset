@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e3fa5357d3e314c8dfc39a3aac3835, type: 3}
+  m_Name: LootDeckConfig
+  m_EditorClassIdentifier: 
+  deckName: Loot Deck
+  deckType: 0
+  cards:
+  - card: {fileID: 11400000, guid: ca4e7fe3d0919f4449360993b1de22ef, type: 2}
+    quantity: 10
+  - card: {fileID: 11400000, guid: 6938e899e5f0082418bb57240d87e384, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: c95100bcef4162a40b31f87eb2b2ed46, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: 18c415cdcbba2a646b47a7c6686e6165, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: 55b88fde159846c448c058eb01d4467f, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: 1b7f902fcd6f5c841b0190b3c94ce029, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: 0e180b8c921f1b745ae31b3864e107b3, type: 2}
+    quantity: 10
+  totalCards: 35

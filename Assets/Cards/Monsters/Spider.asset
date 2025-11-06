@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae131153ddf9a4cabd4bba58140b6a, type: 3}
+  m_Name: Spider
+  m_EditorClassIdentifier: 
+  cardId: 602
+  cardName: Spider
+  cardType: 2
+  description: "Una ara\xF1a"
+  frontSprite: {fileID: 21300000, guid: 83c0a5cbb36196949aea1528b5777c70, type: 3}
+  backSprite: {fileID: 21300000, guid: cabf475ed8f3ea3469de5ae8820885d4, type: 3}
+  health: 1
+  diceRequirement: 4
+  attackDamage: 1
+  rewardCoins: 0
+  rewardLootCards: 1
+  rewardTreasure: 0
+  rewardSoulsMin: 0
+  rewardSoulsMax: 0
+  effects: []
+  hasCombatTrigger: 0
+  combatTriggerRollValue: 0
+  combatTriggerAttackerDamage: 0
+  isUnique: 0
+  canPlayOnOtherTurn: 0
+  isSingleUse: 0
+  isPassive: 0

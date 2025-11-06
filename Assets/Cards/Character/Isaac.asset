@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ad90b220e7c5247bc0ae4f7f89bcd6, type: 3}
+  m_Name: Isaac
+  m_EditorClassIdentifier: 
+  characterType: 0
+  characterName: Isaac
+  characterCardFront: {fileID: 21300000, guid: d035af57ef490bc40b293e5da5c3a39d, type: 3}
+  characterCardBack: {fileID: 21300000, guid: 7d4809df8852d0a49bc6321af1e9124b, type: 3}
+  CharacterIcon: {fileID: 21300000, guid: ae5fa79691be476479721c75fec7f90b, type: 3}
+  startingHealth: 2
+  startingCoins: 3
+  startingAttack: 1
+  eternalItems:
+  - {fileID: 11400000, guid: 57d7f5fb60b0bbd458c35726683e87df, type: 2}
+  abilityDescription: 

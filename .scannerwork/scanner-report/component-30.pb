@@ -1,0 +1,1 @@
+ 2csX%hr&Assets/Scripts/Data/CharacterDataSO.cs
