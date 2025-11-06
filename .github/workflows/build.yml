@@ -1,5 +1,5 @@
 name: SonarCloud Analysis
-#retry
+
 on:
   push:
     branches: [ master ]
@@ -29,16 +29,21 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
 
+      # 🔧 Cambiado: instalar herramienta sin analizar el proyecto actual
       - name: Install SonarScanner for .NET
-        run: dotnet tool install --global dotnet-sonarscanner
+        run: |
+          dotnet new tool-manifest
+          dotnet tool install dotnet-sonarscanner
 
       - name: Begin SonarCloud analysis
         run: |
-          dotnet-sonarscanner begin /k:"JordanPD03_FourSoulsGame_Unity" /o:"jordanpd03" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet sonarscanner begin /k:"JordanPD03_FourSoulsGame_Unity" /o:"jordanpd03" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
 
-      - name: Build the project
+      # ✅ Usamos el archivo .sln en vez de los .csproj
+      - name: Build the Unity solution
         run: |
-          dotnet build Assembly-CSharp.csproj --no-incremental
+          dotnet build FourSoulsGame.sln --no-incremental
 
       - name: End SonarCloud analysis
-        run: dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        run: |
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
