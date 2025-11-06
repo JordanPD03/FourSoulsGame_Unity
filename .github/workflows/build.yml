@@ -2,7 +2,7 @@ name: SonarCloud Analysis
 #retry
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
