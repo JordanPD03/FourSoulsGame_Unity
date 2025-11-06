@@ -1,45 +1,44 @@
-name: SonarCloud Unity Analysis
+name: SonarCloud Analysis
 
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   build:
-    name: Analyze Unity project
+    name: Build and Analyze
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
-          distribution: 'zulu'
-          java-version: 17
+          dotnet-version: '6.0.x'
 
-      - name: Install SonarScanner
-        run: |
-          mkdir -p $HOME/.sonar
-          curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
-          export PATH="$HOME/.sonar/sonar-scanner-5.0.1.3006-linux/bin:$PATH"
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-      - name: Run SonarCloud analysis (no build required)
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Install SonarScanner for .NET
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Begin SonarCloud analysis
         run: |
-          export PATH="$HOME/.sonar/sonar-scanner-5.0.1.3006-linux/bin:$PATH"
-          sonar-scanner \
-            -Dsonar.projectKey=JordanPD03_FourSoulsGame_Unity \
-            -Dsonar.organization=jordanpd03 \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.sources=Assets \
-            -Dsonar.exclusions=**/Library/**,**/Temp/**,**/Logs/**,**/obj/**,**/Packages/**,**/*.dll \
-            -Dsonar.scanner.force-deprecated-java-version=true
+          dotnet-sonarscanner begin /k:"JordanPD03_FourSoulsGame_Unity" /o:"jordanpd03" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+
+      - name: Build the project
+        run: |
+          dotnet build --no-incremental
+
+      - name: End SonarCloud analysis
+        run: dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
